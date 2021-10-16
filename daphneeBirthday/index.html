@@ -1,0 +1,158 @@
+<style type="text/css">
+@font-face {
+  src: url(Poppins-SemiBoldItalic.otf);
+  font-family: poppins;
+}
+.background {
+  background-color:#F1EFF1;
+  border-radius:5px;
+  margin-left: auto;
+  margin-right: auto
+}
+.general-table {
+  border-spacing: 20px;
+  border-collapse: separate;
+}
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #494a4d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.bday {
+  text-align: center;
+  font-family: poppins
+}
+.cake {
+  text-align: center;
+}
+
+.song{
+  text-align:center;
+  padding-bottom: 30px
+}
+
+.pictures{
+  text-align:center;
+}
+</style>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+<!--Background Holder-->
+<table class="background">
+<!--Cake-->
+<tr>
+<td class=cake>
+  <img id= "cakeImage1" src="cake1.png">
+  <script>
+    document.getElementById('cakeImage1').onclick = function() {
+      if (this.src == 'cake1.png') {
+        this.src = 'cake2.png';
+      } else {
+        this.src = ('cake2.png');
+      }
+    }
+  </script>
+</td>
+</tr>
+
+<!--Happy birthday-->
+<tr>
+<td>
+  <h1 class="bday">
+    happy birthday!
+  </h1>
+</td>
+</tr>
+<!--Other-->
+<tr>
+<td>
+  <table class="general-table">
+    <tr>
+      <!--Slider-->
+      <td>
+        <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+      </td>
+      <!--Song-->
+      <td class="song">
+        <audio controls>
+          <source src="birthdaySong.mp3" type="audio/mpeg">
+        </audio>
+      </td>
+    </tr>
+
+    <tr class="pictures">
+      <!--Picture 1-->
+      <td>
+        <img class="picture1"src=daphnee.png>
+        <style>
+          .picture1{
+            width: 15em;
+            height: 15em;
+            box-shadow:0px 10px 30px 5px rgba(0,0,0,.35);
+          }
+        </style>
+      </td>
+      <!--Picture 2-->
+      <td>
+        <img class="picture2"src=daphnee2.png>
+        <style>
+          .picture2{
+            width: 15em;
+            height: 15em;
+            box-shadow:0px 10px 30px 5px rgba(0,0,0,.35);
+          }
+        </style>
+      </td>
+    </tr>
+  </table>
+</td>
+</tr>
+</table>
